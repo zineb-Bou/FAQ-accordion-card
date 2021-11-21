@@ -28,28 +28,37 @@ const answerQuestionList = [
   },
 ];
 function FAQitems(props) {
-  const [isOpen, setIsOpen] = useState(false);
   const item = (
     <li className="FAQlist__item">
-      <h3 className={isOpen ? 'open ' : ''}>{props.question}</h3>
-      <button className="FAQlist__item__btn" onClick={() => setIsOpen(!isOpen)}>
+      <h3 className={props.isOpen ? 'open ' : ''}>{props.question}</h3>
+      <button className="FAQlist__item__btn" onClick={props.onClick}>
         <span className="sr-only">Show the answer</span>
-        {isOpen ? (
+        {props.isOpen ? (
           <span className="FAQlist__item__btn-open"></span>
         ) : (
           <span className="FAQlist__item__btn-close"></span>
         )}
       </button>
-      {isOpen && <p>{props.answer}</p>}
+      {props.isOpen ? <p>{props.answer}</p> : ''}
     </li>
   );
   return item;
 }
 function FAQcard() {
-  const list = [];
-  answerQuestionList.forEach((listItem, key) =>
-    list.push(<FAQitems question={listItem.q} answer={listItem.a} />)
-  );
+  const [activeIndex, setActiveIndex] = useState(0);
+  const list = answerQuestionList.map((item, index) => {
+    let isOpen = index === activeIndex ? true : false;
+    return (
+      <FAQitems
+        question={item.q}
+        answer={item.a}
+        isOpen={isOpen}
+        onClick={() => {
+          setActiveIndex(index);
+        }}
+      />
+    );
+  });
   return (
     <div className="faq">
       <div className="faq__image" aria-label="true"></div>
