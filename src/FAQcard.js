@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Arrow } from './icons.js';
 import reactDOM from 'react-dom';
 
 const answerQuestionList = [
@@ -29,15 +30,14 @@ const answerQuestionList = [
 ];
 function FAQitems(props) {
   const item = (
-    <li className="FAQlist__item">
+    <li
+      className={`FAQlist__item ${props.isOpen ? 'open' : ''}`}
+      onClick={props.onClick}
+    >
       <h3 className={props.isOpen ? 'open ' : ''}>{props.question}</h3>
       <button className="FAQlist__item__btn" onClick={props.onClick}>
         <span className="sr-only">Show the answer</span>
-        {props.isOpen ? (
-          <span className="FAQlist__item__btn-open"></span>
-        ) : (
-          <span className="FAQlist__item__btn-close"></span>
-        )}
+        <Arrow isOpen={props.isOpen} />
       </button>
       {props.isOpen ? <p>{props.answer}</p> : ''}
     </li>
@@ -70,29 +70,3 @@ function FAQcard() {
   );
 }
 export default FAQcard;
-{
-  /*
-  
-   <FAQitems
-          question="how many team members an I invite"
-          answer="  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan."
-        />
-        <FAQitems
-          question="What is the maximum file upload size?"
-          answer="No more than 2GB. All files in your account must fit your allotted storage space."
-        />
-        <FAQitems
-          question="How do I reset my password?"
-          answer="Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you."
-        />
-        <FAQitems
-          question="Can I cancel my subscription?"
-          answer="Yes! Send us a message and we’ll process your request no questions asked."
-        />
-        <FAQitems
-          question="Do you provide additional support?"
-          answer="Chat and email support is available 24/7. Phone lines are open during normal business hours."
-        /> */
-}
