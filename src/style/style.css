@@ -183,7 +183,7 @@ body {
     grid-row: 1/2;
     grid-column: 1/2;
     margin: 0;
-    margin-top: -12rem;
+    margin-top: -14rem;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -191,12 +191,20 @@ body {
     background: url('../../public/images/illustration-woman-online-mobile.svg')
       center center no-repeat;
   }
-  .FAQlist__item {
-    grid-template-columns: 14rem 24px;
-  }
   .faq__image:before {
     visibility: hidden;
   }
+  .faq__image::after {
+    content: url('../../public/images/bg-pattern-mobile.svg');
+    position: absolute;
+    top: 14.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .FAQlist__item {
+    grid-template-columns: 14rem 24px;
+  }
+
   .faq__heading {
     grid-column: 1/2;
     grid-row: 2/3;
