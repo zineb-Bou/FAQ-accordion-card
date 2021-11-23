@@ -1,6 +1,6 @@
 # 🃏 FAQ Accordion Card - React.js
 
-![Design preview for the FAQ accordion card coding challenge](./public/images/design-preview.jpg)
+![Design preview for the FAQ accordion card coding ](./public/images/desktop-preview.jpg)
 
 ## Welcome! 👋
 
