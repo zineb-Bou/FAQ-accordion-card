@@ -1,5 +1,6 @@
 @import 'reset.css';
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
 :root {
   /* Text */
   --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
@@ -29,60 +30,6 @@ body {
   white-space: nowrap;
   width: 1px;
 }
-.FAQlist__item__btn {
-  width: 24px;
-  height: 24px;
-  display: grid;
-  place-items: center;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-.arrow-icon {
-  height: 1.5rem;
-  width: 1.5rem;
-  display: block;
-  position: relative;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.arrow-icon__left-bar {
-  position: absolute;
-  background-color: var(--Soft-red);
-  top: 8px;
-  left: 0;
-  width: 0.8rem;
-  height: 4px;
-  display: block;
-  transform: rotate(40deg);
-  border-radius: 6px 10px 10px 6px;
-}
-
-.arrow-icon__right-bar {
-  position: absolute;
-  background-color: var(--Soft-red);
-  top: 8px;
-  left: 8px;
-  width: 0.8rem;
-  height: 4px;
-  display: block;
-  transform: rotate(-40deg);
-  border-radius: 2px;
-  border-radius: 10px 6px 6px 10px;
-}
-
-.arrow-icon__right-bar.open {
-  transform-origin: center center;
-  transform: rotate(40deg);
-  transition: all 1s cubic-bezier(0.25, 1.7, 0.35, 0.8);
-}
-.arrow-icon__left-bar.open {
-  transform-origin: center center;
-  transform: rotate(-40deg);
-  transition: all 1s cubic-bezier(0.25, 1.7, 0.35, 0.8);
-}
-
 /* style the FAQ element */
 .faq {
   background-color: #fff;
@@ -113,7 +60,6 @@ body {
   bottom: 3.5rem;
   animation: bounce 1s infinite ease-in-out;
 }
-
 @keyframes bounce {
   0% {
     transform: translateY(-5px);
@@ -148,27 +94,81 @@ body {
   margin: 0.3rem 0;
   padding-bottom: 1rem;
 }
-.FAQlist__item .FAQlist__item__btn {
+.FAQlist__item__btn {
   justify-self: end;
 }
-.FAQlist__item p {
-  grid-column: 1/2;
-  font-size: 0.8rem;
-  color: var(--Dark-grayish-blue);
-  transition: all 2s ease-in-out;
-}
-.FAQlist__item h3 {
+.FAQlist__item__question {
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--Dark-grayish-blue);
   cursor: pointer;
 }
-.FAQlist__item h3.open {
+.FAQlist__item__question.open {
   font-weight: 700;
   color: var(--Very-dark-desaturated-blue);
 }
-.FAQlist__item h3:hover {
+.FAQlist__item__question:hover {
   color: var(--Soft-red);
+}
+
+.FAQlist__item__answer {
+  grid-column: 1/2;
+  font-size: 0.8rem;
+  color: var(--Dark-grayish-blue);
+  transition: all 2s ease-in-out;
+}
+
+.FAQlist__item__btn {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.arrow-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.arrow-icon__left-bar {
+  position: absolute;
+  background-color: var(--Soft-red);
+  top: 8px;
+  left: 0;
+  width: 0.8rem;
+  height: 4px;
+  display: block;
+  transform: rotate(40deg);
+  border-radius: 6px 10px 10px 6px;
+}
+
+.arrow-icon__right-bar {
+  position: absolute;
+  background-color: var(--Soft-red);
+  top: 8px;
+  left: 8px;
+  width: 0.8rem;
+  height: 4px;
+  display: block;
+  transform: rotate(-40deg);
+  border-radius: 2px;
+  border-radius: 10px 6px 6px 10px;
+}
+
+.arrow-icon__right-bar.open {
+  transform-origin: center center;
+  transform: rotate(40deg);
+  transition: all 0.3s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+}
+.arrow-icon__left-bar.open {
+  transform-origin: center center;
+  transform: rotate(-40deg);
+  transition: all 0.3s cubic-bezier(0.25, 1.7, 0.35, 0.8);
 }
 
 @media (max-width: 964px) {
