@@ -15,4 +15,4 @@ Thanks for checking out this front-end coding challenge.
 - React.js with hooks
 - Responsive design
 
-Made with 💖 by Zineb Boutaa
+Made with 💖 by [ZINEB](https://zineb-bou.github.io/)
